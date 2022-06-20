@@ -22,10 +22,10 @@
 
     <div class="container-sm">
         <div class="bg-light p-5 rounded-lg m-3">
-            <h1 class="display-4">Welcome to AG CSVER</h1>
+            <h1 class="display-4">Welcome to our Backend</h1>
             <p></p>
             <hr class="my-4">
-            <p class="lead">Select Options</p>
+            {{--<p class="lead">Select Options</p>--}}
             {{--<a class="btn btn-primary" href="{{ }}">Browse Frontend</a>--}}
             {{--<a class="btn btn-danger" href="{{  }}">Browse Api Docs</a>--}}
         </div>

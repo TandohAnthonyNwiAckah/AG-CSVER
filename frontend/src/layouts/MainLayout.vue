@@ -99,6 +99,7 @@
                 </q-dialog>
             </q-layout>
 </template>
+
 <script>
 	import { mapMutations, mapState, mapActions } from "vuex";
 	export default {
@@ -255,6 +256,7 @@
 
 <style>
 </style>
+
 <style lang="scss">
 	body.body--light {
 		background: #fafafa

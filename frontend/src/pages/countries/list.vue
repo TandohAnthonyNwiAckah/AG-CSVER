@@ -14,10 +14,26 @@
                             </div>
                         </div>
                         <div class="col-md-auto col-12 " >
-                            <q-btn       :rounded="false"  size=""  color="primary" no-caps  unelevated   :to="`/countries/add`" class="full-width" >
-                                <q-icon name="add"></q-icon>                                
-                                Add New Countries 
-                            </q-btn>
+
+
+
+
+                            <!--<q-btn       :rounded="false"  size=""  color="primary" no-caps  unelevated   :to="`/countries/add`" class="full-width" >-->
+                                <!--<q-icon name="add"></q-icon>                                -->
+                                <!--Add New Countries -->
+                            <!--</q-btn>-->
+
+
+                            <import-data label="Select a file to import" ref="dataimport" upload-path="countries/importdata" @importComplete="importComplete">
+                                <q-btn class="q-my-xs" @click="$refs.dataimport.openDialog()" icon="import_export"    :rounded="false"  no-caps  unelevated   color="accent" padding="xs" label="Import Countries" >
+                                </q-btn>
+                            </import-data>
+
+
+
+
+
+
                         </div>
                         <div class="col-md-auto col-12 " >
                             <q-input debounce="1000" outlined dense  placeholder="Search" v-model="searchText" >
@@ -171,10 +187,10 @@
                                                                     <q-btn    :rounded="false"  no-caps  unelevated   color="negative" padding="xs" @click="deleteItem(selectedItems)" v-if="selectedItems.length" icon="delete_sweep" class="q-my-xs" title="Delete Selected"></q-btn>
                                                                 </div>
                                                                 <div>
-                                                                    <import-data label="Select a file to import" ref="dataimport" upload-path="countries/importdata" @importComplete="importComplete">
-                                                                    <q-btn class="q-my-xs" @click="$refs.dataimport.openDialog()" icon="import_export"    :rounded="false"  no-caps  unelevated   color="accent" padding="xs" label="Import Countries" >
-                                                                    </q-btn>
-                                                                    </import-data>
+                                                                    <!--<import-data label="Select a file to import" ref="dataimport" upload-path="countries/importdata" @importComplete="importComplete">-->
+                                                                    <!--<q-btn class="q-my-xs" @click="$refs.dataimport.openDialog()" icon="import_export"    :rounded="false"  no-caps  unelevated   color="accent" padding="xs" label="Import Countries" >-->
+                                                                    <!--</q-btn>-->
+                                                                    <!--</import-data>-->
                                                                 </div>
                                                             </div>
                                                             <div v-if="paginate && totalRecords > 0" class="row q-col-gutter-md justify-center">

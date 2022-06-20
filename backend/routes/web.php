@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'CountriesController@index');
+Route::get('/', 'Controller@redirectToFrontend');
 
 //Route::get('/', function () {
 //    return view('welcome');

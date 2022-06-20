@@ -6,7 +6,6 @@
         "agcsver",
         "php",
         "quasar",
-        "framework",
         "laravel"
     ],
     "license": "MIT",

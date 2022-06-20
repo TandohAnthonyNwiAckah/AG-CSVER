@@ -13,12 +13,27 @@
                                 </div>
                             </div>
                         </div>
+
+
                         <div class="col-md-auto col-12 " >
-                            <q-btn       :rounded="false"  size=""  color="primary" no-caps  unelevated   :to="`/currencies/add`" class="full-width" >
-                                <q-icon name="add"></q-icon>                                
-                                Add New Currencies 
-                            </q-btn>
+
+
+                            <!--<q-btn       :rounded="false"  size=""  color="primary" no-caps  unelevated   :to="`/currencies/add`" class="full-width" >-->
+                                <!--<q-icon name="add"></q-icon>-->
+                                <!--Add New Currencies-->
+                            <!--</q-btn>-->
+
+
+                            <import-data label="Select a file to import" ref="dataimport" upload-path="currencies/importdata" @importComplete="importComplete">
+                                <q-btn class="q-my-xs" @click="$refs.dataimport.openDialog()" icon="import_export"    :rounded="false"  no-caps  unelevated   color="accent" padding="xs" label="Import Currencies" >
+                                </q-btn>
+                            </import-data>
+
+
+
                         </div>
+
+
                         <div class="col-md-auto col-12 " >
                             <q-input debounce="1000" outlined dense  placeholder="Search" v-model="searchText" >
                             <template v-slot:append>
@@ -30,6 +45,7 @@
                 </div>
             </q-card>
         </template>
+
         <section class="page-section " >
             <div class="container-fluid">
                 <div class="row q-col-gutter-x-md">
@@ -53,18 +69,18 @@
                                         <div class="col">
                                             <!-- page records template -->
                                             <template >
-                                                <q-table 
+                                                <q-table
                                                 :flat="true"
                                                 table-header-class="text-h4 "
                                                 :bordered="false"
-                                                :columns="$menus.CurrenciesTableHeaderItems" 
+                                                :columns="$menus.CurrenciesTableHeaderItems"
                                                 :data="records"
                                                 binary-state-sort
                                                 separator="horizontal"
                                                 :dense="true"
                                                 :selected.sync="selectedItems"
                                                 selection="multiple"
-                                                row-key="id" 
+                                                row-key="id"
                                                 :pagination.sync="pagination"
                                                 hide-bottom
                                                 @request="setPagination"
@@ -129,7 +145,7 @@
                                             <!-- page loading indicator template -->
                                             <template v-if="loading">
                                                 <q-inner-loading :showing="loading">
-                                                    <q-spinner color="primary" size="30px"> 
+                                                    <q-spinner color="primary" size="30px">
                                                     </q-spinner>
                                                 </q-inner-loading>
                                             </template>
@@ -138,7 +154,7 @@
                                                 <q-card :flat="$q.screen.gt.md">
                                                     <q-card-section>
                                                         <div class="text-grey text-h6 text-center">
-                                                            No record found
+                                                            Empty Currencies
                                                         </div>
                                                     </q-card-section>
                                                 </q-card>
@@ -153,10 +169,10 @@
                                                                     <q-btn    :rounded="false"  no-caps  unelevated   color="negative" padding="xs" @click="deleteItem(selectedItems)" v-if="selectedItems.length" icon="delete_sweep" class="q-my-xs" title="Delete Selected"></q-btn>
                                                                 </div>
                                                                 <div>
-                                                                    <import-data label="Select a file to import" ref="dataimport" upload-path="currencies/importdata" @importComplete="importComplete">
-                                                                    <q-btn class="q-my-xs" @click="$refs.dataimport.openDialog()" icon="import_export"    :rounded="false"  no-caps  unelevated   color="accent" padding="xs" label="Import Currencies" >
-                                                                    </q-btn>
-                                                                    </import-data>
+                                                                    <!--<import-data label="Select a file to import" ref="dataimport" upload-path="currencies/importdata" @importComplete="importComplete">-->
+                                                                    <!--<q-btn class="q-my-xs" @click="$refs.dataimport.openDialog()" icon="import_export"    :rounded="false"  no-caps  unelevated   color="accent" padding="xs" label="Import Currencies" >-->
+                                                                    <!--</q-btn>-->
+                                                                    <!--</import-data>-->
                                                                 </div>
                                                             </div>
                                                             <div v-if="paginate && totalRecords > 0" class="row q-col-gutter-md justify-center">
@@ -167,7 +183,7 @@
                                                                     <q-pagination  color="primary" flat glossy  input v-model="pagination.page" :direction-links="true" :boundary-links="true" :max-pages="5" :boundary-numbers="true" :max="totalPages"></q-pagination>
                                                                 </div>
                                                             </div>
-                                                        </div>  
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </template>
@@ -180,6 +196,8 @@
                 </div>
             </div>
         </section>
+
+
     </div>
 </template>
 <script>
@@ -291,7 +309,7 @@
 						}
 					);
 				}
-			},	
+			},
 		},
 		async mounted() {
 		},

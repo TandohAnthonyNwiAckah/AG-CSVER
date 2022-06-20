@@ -12,7 +12,9 @@ let routes = [
 			{ 
 				path: '/(home)?', 
 				name: 'home' , 
-				component: () => import('pages/home/home.vue'),
+				// component: () => import('pages/home/home.vue'),
+                component: () => import('pages/countries/list.vue'),
+
 				props: true
 			},
 			//Dashboard routes

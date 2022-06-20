@@ -1,14 +1,22 @@
 <template>
-    <q-page  class="main-page">
-        <section class="page-section q-pa-md" >
+    <q-page class="main-page">
+        <section class="page-section q-pa-md">
             <div class="container-fluid">
                 <div class="row q-col-gutter-x-md">
-                    <div class="col comp-grid" >
-                        <div class="" >
+                    <div class="col comp-grid">
+                        <div class="">
                             <div class="row  items-center q-col-gutter-sm q-px-sm">
-                                <div class="col">
-                                    <div class="text-h6 text-bold">Home</div>
+
+
+                                <div class="col-auto">
+                                    <q-avatar class="q-mr-sm" font-size="25px" size="40px" color="grey-3"
+                                              text-color="primary" icon="home"/>
                                 </div>
+                                <div class="col">
+                                    <div class="text-h6 text-bold">Our Home</div>
+                                </div>
+
+
                             </div>
                         </div>
                         <q-separator class="q-my-sm"></q-separator>
@@ -21,29 +29,25 @@
 
 
 <script>
-	import { PageMixin } from "../../mixins/page.js";
-	export default {
-		name: '',
-		components: {
-		},
-		mixins: [PageMixin ],
-		props: {
-		},
-		data: function() {
-			return {
-				ready: false,
-			}
-		},
-		computed: {
-		},
-		methods: {
-		},
-		watch: {
-		},
-		mounted: function(){
-			this.ready = true;
-		},
-		created: function(){
-		}
-	};
+    import {PageMixin} from "../../mixins/page.js";
+
+    export default {
+        name: '',
+        components: {},
+        mixins: [PageMixin],
+        props: {},
+        data: function () {
+            return {
+                ready: false,
+            }
+        },
+        computed: {},
+        methods: {},
+        watch: {},
+        mounted: function () {
+            this.ready = true;
+        },
+        created: function () {
+        }
+    };
 </script>

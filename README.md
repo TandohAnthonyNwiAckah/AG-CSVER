@@ -71,6 +71,34 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 
 
+### Sample  Command
+
+
+
+> Create CountriesController Unit Test
+````
+php artisan make:test --unit CountriesController
+````
+
+
+> Create CurrenciesController Unit Test
+````
+php artisan make:test --unit CurrenciesController
+````
+
+
+>  Clear all compiled view files
+````
+php artisan view:clear
+````
+
+>  Remove the route cache file
+````
+php artisan route:clear
+````
+
+
+
 # TOOLS USED
 - COMPOSER
 - GIT and GITHUB
@@ -90,7 +118,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - [x] Launch the project on a live server.
 
 
-- [ ] Units Test
+- [ ] More Testings
 
 
 

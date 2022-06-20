@@ -20,9 +20,8 @@ Route::middleware(['auth:api'])->group(function () {
 });
 
 
-
 /* routes for Countries Controller  */	
-	Route::get('countries', 'CountriesController@index');
+	Route::get('countries', 'CountriesController@index')->name('all_country');
 	Route::get('countries/index', 'CountriesController@index');
 	Route::get('countries/index/{filter?}/{filtervalue?}', 'CountriesController@index');	
 	Route::post('countries/importdata', 'CountriesController@importdata');	
@@ -32,7 +31,7 @@ Route::middleware(['auth:api'])->group(function () {
 	Route::any('countries/delete/{rec_id}', 'CountriesController@delete');
 
 /* routes for Currencies Controller  */	
-	Route::get('currencies', 'CurrenciesController@index');
+	Route::get('currencies', 'CurrenciesController@index')->name('all_currency');
 	Route::get('currencies/index', 'CurrenciesController@index');
 	Route::get('currencies/index/{filter?}/{filtervalue?}', 'CurrenciesController@index');	
 	Route::post('currencies/importdata', 'CurrenciesController@importdata');	
@@ -41,7 +40,3 @@ Route::middleware(['auth:api'])->group(function () {
 	Route::any('currencies/edit/{rec_id}', 'CurrenciesController@edit');	
 	Route::any('currencies/delete/{rec_id}', 'CurrenciesController@delete');
 
-
-Route::post('fileuploader/upload/{fieldname}', 'FileUploaderController@upload');
-Route::post('fileuploader/s3upload/{fieldname}', 'FileUploaderController@s3upload');
-Route::post('fileuploader/remove_temp_file', 'FileUploaderController@remove_temp_file');

@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'Controller@redirectToFrontend');
+
+
+//Route::get('/', 'CountriesController@index');
 //
 //Route::get('/', function () {
 //    return view('welcome');

@@ -54,12 +54,14 @@ module.exports = function (/* ctx */) {
                 // API_PATH: 'http://127.0.0.1:8000/api/'
 
 
-                // API_URL: 'http://localhost/AG-CSVER/backend/index.php/',
-                // API_PATH: 'http://localhost/AG-CSVER/backend/index.php/api/'
+                //LOCAL URL
+                API_URL: 'http://localhost/AG-CSVER/backend/index.php/',
+                API_PATH: 'http://localhost/AG-CSVER/backend/index.php/api/'
 
 
-                API_URL: 'https://test.tanacom.io/admin/',
-                API_PATH: 'https://test.tanacom.io/admin/api/'
+                // LIVE  URL
+                // API_URL: 'https://test.tanacom.io/admin/',
+                // API_PATH: 'https://test.tanacom.io/admin/api/'
 
 
             },

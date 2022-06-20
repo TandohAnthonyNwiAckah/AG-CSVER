@@ -3,21 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Uploader;
+use Exception;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
-
 use Illuminate\Support\Facades\File;
-use App\Recipients\EmailRecipient;
-use App\Notifications\RecordActionMail;
-use App\Notifications\OTPVerification;
-use Exception;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
 
     /**
      * Redirect to Frontend URL
@@ -28,7 +23,6 @@ class Controller extends BaseController
         return redirect()->to("http://localhost:8080");
 
     }
-
 
     /**
      * Build custom pagination object from the request record
@@ -63,7 +57,6 @@ class Controller extends BaseController
         return $data;
     }
 
-
     /**
      * Return failed Http response
      * @return \Illuminate\Http\Response
@@ -72,7 +65,6 @@ class Controller extends BaseController
     {
         return response($msg, $status_code);
     }
-
 
     /**
      * Parse csv file into multidimensional array
@@ -107,7 +99,6 @@ class Controller extends BaseController
         }
         return $arr_data;
     }
-
 
     /**
      * Convinient function to delete files associated with record when deleted
@@ -208,39 +199,5 @@ class Controller extends BaseController
         return $fileInfo;
     }
 
-    /**
-     * Send mail to system admin on record action such as Insert| Delete | Update
-     * @param $receiver
-     * @param $subject
-     * @param $message
-     * @param $recordLink
-     * @return void
-     */
-    public function sendRecordActionMail($receiver, $subject, $message, $recordLink = null)
-    {
-        try {
-            $recipient = new EmailRecipient($receiver);
-            $recipient->notify(new RecordActionMail($subject, $message, $recordLink));
-        } catch (Exception $e) {
-            throw $e;
-        }
-    }
 
-
-    /**
-     * Send otp verification email to user
-     * @param $receiver
-     * @param $subject
-     * @param $message
-     * @return void
-     */
-    public function sendOTPVerificationMail($receiver, $subject, $message)
-    {
-        try {
-            $recipient = new EmailRecipient($receiver);
-            $recipient->notify(new OTPVerification($subject, $message));
-        } catch (Exception $e) {
-            throw $e;
-        }
-    }
 }

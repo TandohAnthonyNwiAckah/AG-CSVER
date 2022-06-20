@@ -34,10 +34,10 @@
 				default: "archive"
 			},
 			numDisplay: {
-				type: Number, 
+				type: Number,
 				required: false,
 				default: 1
-			}, 
+			},
         },
         data: function() {
             return {
@@ -45,7 +45,7 @@
             };
 		},
 		computed: {
-			
+
 		},
 		watch: {
 			value(){

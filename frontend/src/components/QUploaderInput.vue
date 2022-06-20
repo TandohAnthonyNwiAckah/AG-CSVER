@@ -1,16 +1,16 @@
 <template>
-	<q-uploader ref="uploader" 
+	<q-uploader ref="uploader"
 	:flat="flat"
 	:max-files="fileLimit"
 	:max-file-size="maxFileSizeInKB"
-	:bordered="bordered" 
-	:accept="accept" 
-	:factory="factoryFn" 
-	:label="getLabel" 
-	auto-upload hide-upload-btn  
+	:bordered="bordered"
+	:accept="accept"
+	:factory="factoryFn"
+	:label="getLabel"
+	auto-upload hide-upload-btn
 	:multiple="multiple"
     :filter="checkFileLimit"
-	@uploaded="uploadComplete" 
+	@uploaded="uploadComplete"
 	@removed="removeFile"
 	@rejected="onRejected"
 	>
@@ -65,47 +65,47 @@ export default {
             default:'.png,.gif,.jpg,.jpg'
         },
         extensions: {
-            type:String, 
+            type:String,
             default:''
         },
         maxFiles: {
-            type:Number, 
+            type:Number,
             default: 5
         },
         maxFileSize: {
-            type:Number, 
+            type:Number,
             default: 10
         },
         multiple:{
-            type: Boolean, 
+            type: Boolean,
             default: true
         },
         flat:{
-            type: Boolean, 
+            type: Boolean,
             default: true
         },
         bordered:{
-            type: Boolean, 
+            type: Boolean,
             default: true
         },
         uploadPath: {
-            type:String, 
+            type:String,
             default:'fileuploader/upload/photo'
         },
         fieldName: {
-            type:String, 
+            type:String,
             default:'photo'
         },
         fileName:{
-            type:String, 
+            type:String,
             default:'file'
         },
         label:{
-            type:String, 
+            type:String,
             default:'Choose files or Drop files here'
         },
         deleteIcon:{
-            type:String, 
+            type:String,
             default:'deleteIcon'
         },
         value: null
@@ -169,7 +169,7 @@ export default {
                     temp_file: fileUrl.toString()
                 }
                 this.$api.post(url, formData).then( (response) => {
-                        
+
                 },
                 (response) => {
                     this.loading = false;

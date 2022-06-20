@@ -24,7 +24,7 @@
                             <!--</q-btn>-->
 
 
-                            <import-data label="Select a file to import" ref="dataimport" upload-path="countries/importdata" @importComplete="importComplete">
+                            <import-data label="Select Countries CSV to import" ref="dataimport" upload-path="countries/importdata" @importComplete="importComplete">
                                 <q-btn class="q-my-xs" @click="$refs.dataimport.openDialog()" icon="import_export"    :rounded="false"  no-caps  unelevated   color="accent" padding="xs" label="Import Countries" >
                                 </q-btn>
                             </import-data>
@@ -172,7 +172,7 @@
                                                 <q-card :flat="$q.screen.gt.md">
                                                     <q-card-section>
                                                         <div class="text-grey text-h6 text-center">
-                                                            No record found
+                                                            No countries found
                                                         </div>
                                                     </q-card-section>
                                                 </q-card>

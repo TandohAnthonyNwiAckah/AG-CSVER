@@ -24,7 +24,7 @@
                             <!--</q-btn>-->
 
 
-                            <import-data label="Select a file to import" ref="dataimport" upload-path="currencies/importdata" @importComplete="importComplete">
+                            <import-data label="Select Currencies CSV to import" ref="dataimport" upload-path="currencies/importdata" @importComplete="importComplete">
                                 <q-btn class="q-my-xs" @click="$refs.dataimport.openDialog()" icon="import_export"    :rounded="false"  no-caps  unelevated   color="accent" padding="xs" label="Import Currencies" >
                                 </q-btn>
                             </import-data>

@@ -249,20 +249,20 @@
                 let events = [];
                 this.records.forEach((record) => {
                     let datetime = this.startDateField  ? record[this.startDateField] : "";
-                   
+
                     if (datetime) {
                         datetime = datetime.replace("T", " ").replace("Z", "").replace("00:00:00", "00:01:00");
                         console.log(datetime);
                     }
-                     
+
                     let dateObj = QCalendar.parseTimestamp(datetime);
-                    
+
                     if (dateObj) {
                         let title = this.titleField ? record[this.titleField] : null;
 
                         let eventDate = dateObj.date;
                         let time = this.startTimeField ? record[this.startTimeField] : dateObj.time;
-                        
+
                         let days;
                         let duration;
 
@@ -299,7 +299,7 @@
 
                         let side = "full-width";
                         let id = this.idField ? record[this.idField] : null;
-                        
+
                         let eventDateObj = { id, title, date: eventDate, time, days, side, duration, color, icon, image};
                         let event = {...record, ...eventDateObj}; //merge page record object with event object
 
@@ -333,14 +333,14 @@
                 const currentDate = QCalendar.parseTimestamp(dt);
                 const events = [];
                 let pageEvents = this.getPageEvents;
-               
+
                 for (let i = 0; i < pageEvents.length; ++i) {
                     let added = false;
                     const event = pageEvents[i];
-                    
+
                     if (event.date === dt) {
                         if (event.time) {
-                           
+
                             if (events.length > 0) {
                                 // check for overlapping times
                                 const startTime = QCalendar.parseTimestamp(
@@ -404,7 +404,7 @@
                         }
                     }
                 }
-                
+
                 return events;
             },
             getDateAgenda(dt) {

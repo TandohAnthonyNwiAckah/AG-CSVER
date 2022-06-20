@@ -1,7 +1,7 @@
 <template>
-  	<div>  
-		<canvas :width="width" :height="height" ref="canvas" id="canvas"></canvas>      
-  	</div>          
+  	<div>
+		<canvas :width="width" :height="height" ref="canvas" id="canvas"></canvas>
+  	</div>
 </template>
 <script>
 	import Chart from 'chart.js';

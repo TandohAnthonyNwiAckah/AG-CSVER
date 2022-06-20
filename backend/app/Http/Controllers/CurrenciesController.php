@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Validator;
 class CurrenciesController extends Controller
 {
 
-
     /**
      * List table records
      * @param  \Illuminate\Http\Request
@@ -63,7 +62,6 @@ class CurrenciesController extends Controller
         return $this->respond($result);
     }
 
-
     /**
      * Select table record by ID
      * @param string $rec_id
@@ -75,7 +73,6 @@ class CurrenciesController extends Controller
         $record = $query->findOrFail($rec_id, Currencies::viewFields());
         return $this->respond($record);
     }
-
 
     /**
      * Save form record to the table
@@ -90,7 +87,6 @@ class CurrenciesController extends Controller
         $rec_id = $record->id;
         return $this->respond($record);
     }
-
 
     /**
      * Update table record with form data
@@ -108,7 +104,6 @@ class CurrenciesController extends Controller
         return $this->respond($record);
     }
 
-
     /**
      * Delete record from the database
      * Support multi delete by separating record id by comma.
@@ -124,4 +119,5 @@ class CurrenciesController extends Controller
         $query->delete();
         return $this->respond($arr_id);
     }
+
 }

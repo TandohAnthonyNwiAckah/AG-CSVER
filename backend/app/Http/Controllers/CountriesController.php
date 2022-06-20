@@ -11,12 +11,6 @@ use Illuminate\Support\Facades\Validator;
 class CountriesController extends Controller
 {
 
-
-
-
-
-
-
     /**
      * List table records
      * @param  \Illuminate\Http\Request
@@ -68,7 +62,6 @@ class CountriesController extends Controller
         return $this->respond($result);
     }
 
-
     /**
      * Select table record by ID
      * @param string $rec_id
@@ -80,7 +73,6 @@ class CountriesController extends Controller
         $record = $query->findOrFail($rec_id, Countries::viewFields());
         return $this->respond($record);
     }
-
 
     /**
      * Save form record to the table
@@ -95,7 +87,6 @@ class CountriesController extends Controller
         $rec_id = $record->id;
         return $this->respond($record);
     }
-
 
     /**
      * Update table record with form data
@@ -129,4 +120,6 @@ class CountriesController extends Controller
         $query->delete();
         return $this->respond($arr_id);
     }
+
+
 }

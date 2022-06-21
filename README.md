@@ -126,7 +126,7 @@ php artisan route:clear
 
 
 # LIVE URL 
-- [Click to visit live project](https://test.tanacom.io/admin/).
+- [Click to visit live project](https://test.tanacom.io).
 
 
 

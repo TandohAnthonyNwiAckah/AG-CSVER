@@ -77,13 +77,13 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 > Create CountriesController Unit Test
 ````
-php artisan make:test --unit CountriesController
+php artisan make:test --unit CountriesControllerTest
 ````
 
 
 > Create CurrenciesController Unit Test
 ````
-php artisan make:test --unit CurrenciesController
+php artisan make:test --unit CurrenciesControllerTest
 ````
 
 

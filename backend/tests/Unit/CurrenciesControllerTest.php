@@ -5,7 +5,7 @@ namespace Tests\Unit;
 //use PHPUnit\Framework\TestCase;
 use Tests\TestCase;
 
-class CurrenciesController extends TestCase
+class CurrenciesControllerTest extends TestCase
 {
 
     /**

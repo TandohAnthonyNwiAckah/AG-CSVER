@@ -28,10 +28,13 @@ class CountriesController extends Controller
         $orderby = $request->orderby ?? "countries.id";
         $ordertype = $request->ordertype ?? "desc";
         $query->orderBy($orderby, $ordertype);
+
         if ($fieldname) {
             $query->where($fieldname, $fieldvalue); //filter by a single field name
         }
+
         $records = $this->paginate($query, Countries::listFields());
+
         return $this->respond($records);
     }
 
